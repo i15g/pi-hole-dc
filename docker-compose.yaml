@@ -1,0 +1,24 @@
+version: "3"
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    # network_mode: "host" # Required for DHCP
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp"
+      - "80:80/tcp"
+      - "443:443/tcp"
+    environment:
+      TZ: 'America/Los_Angeles'
+      PIHOLE_DNS: 9.9.9.9;149.112.112.112
+      # ServerIP: TODO # Required for DHCP
+      # WEBPASSWORD will be random
+    volumes:
+      - './etc-pihole/:/etc/pihole/'
+      - './etc-dnsmasq.d/:/etc/dnsmasq.d/'
+      - './var-log/pihole.log:/var/log/pihole.log'
+    cap_add:
+      - NET_ADMIN # Required for DHCP
+    restart: unless-stopped
