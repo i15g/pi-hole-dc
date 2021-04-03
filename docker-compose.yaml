@@ -12,7 +12,7 @@ services:
       - "443:443/tcp"
     environment:
       TZ: 'America/Los_Angeles'
-      PIHOLE_DNS: 9.9.9.9;149.112.112.112
+      PIHOLE_DNS_: 9.9.9.9;149.112.112.112
       # ServerIP: TODO # Required for DHCP
       # WEBPASSWORD will be random
     volumes:
