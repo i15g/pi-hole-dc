@@ -16,3 +16,7 @@ docker-compose stop
 # Cleanup and remove everything
 sh cleanup.sh
 ```
+
+## Unbound - TODO
+
+- https://docs.pi-hole.net/guides/unbound/#setting-up-pi-hole-as-a-recursive-dns-server-solution
