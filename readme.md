@@ -5,11 +5,14 @@
 
 ```bash
 # First time setup
-touch ./var-log/pihole.log
+sh setup.sh
 
-# Start pi-hole
-docker-compose up --detach
+# First time setup for DHCP, $1 is ip of pi-hole machine
+sh setup.sh 123.123.123.123
 
-# Find the randomly generated password:
-docker logs pihole | grep random
+# Temporarily stop pi-hole
+docker-compose stop
+
+# Cleanup and remove everything
+sh cleanup.sh
 ```

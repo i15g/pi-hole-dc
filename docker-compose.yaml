@@ -11,9 +11,8 @@ services:
       - "80:80/tcp"
       - "443:443/tcp"
     environment:
-      TZ: 'America/Los_Angeles'
-      PIHOLE_DNS_: 9.9.9.9;149.112.112.112
-      # ServerIP: TODO # Required for DHCP
+      TZ: 'America/Los_Angeles' # PST
+      PIHOLE_DNS_: 9.9.9.9;149.112.112.112 #Quad9
       # WEBPASSWORD will be random
     volumes:
       - './etc-pihole/:/etc/pihole/'
