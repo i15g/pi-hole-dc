@@ -7,6 +7,9 @@
 # First time setup
 touch ./var-log/pihole.log
 
+# Start pi-hole
+docker-compose up --detach
+
 # Find the randomly generated password:
 docker logs pihole | grep random
 ```
