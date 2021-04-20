@@ -13,6 +13,9 @@ sh setup.sh 123.123.123.123
 # Temporarily stop pi-hole
 docker-compose stop
 
+# Upgrade
+sh upgrade.sh
+
 # Cleanup and remove everything
 sh cleanup.sh
 ```
